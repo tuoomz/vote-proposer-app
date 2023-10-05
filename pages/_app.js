@@ -19,12 +19,6 @@ import ConnectButtonRainbowKit from "../components/ConnectButtonRainbowKit"
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
   [
-    mainnet,
-    polygon,
-    optimism,
-    arbitrum,
-    base,
-    zora,
     sepolia,
     ...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === 'true' ? [goerli,] : []),
   ],
