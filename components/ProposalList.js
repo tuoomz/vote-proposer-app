@@ -50,8 +50,6 @@ export default function ProposalList() {
                 no: item.noVotes.toString()
             }));
 
-            console.log(mappedProposals);
-
             setProposals(mappedProposals);
         } catch (error) {
             console.error('Error fetching proposals:', error);
@@ -66,12 +64,10 @@ export default function ProposalList() {
     useEffect(() => {
         if (proposalVoterContract) {
             const handleNewProposal = (event) => {
-                console.log("New Proposal ", event);
                 fetchProposals();
             };
 
             const handleVoteCast = (event) => {
-                console.log("New Vote Cast ", event);
                 fetchProposals();
             };
 
@@ -83,7 +79,6 @@ export default function ProposalList() {
             // Unsubscribe from the events and clean up
             return async () => {
                 await proposalVoterContract.off('ProposalCreated', handleNewProposal).then(() => console.log("unsubbed prop"));;
-                console.log("unsub to proposal");
                 await proposalVoterContract.off('VoteCast', handleVoteCast).then(() => console.log("unsubbed vote"));;
             };
         }
