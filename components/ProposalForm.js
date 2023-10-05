@@ -9,10 +9,14 @@ import styled from 'styled-components';
 
 const StyledContainer = styled(Container)`
   width: 50%;
-  margin: 50px;
+  margin: auto;
   padding: 20px;
   border-radius: 12px;
   margin-bottom: 20px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const StyledButton = styled(Button)`
